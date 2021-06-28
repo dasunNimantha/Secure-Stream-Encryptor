@@ -99,13 +99,13 @@ namespace SSE
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                         if (checkLow.Checked)
                         {
-                            startInfo.Arguments = $@"/k cd {path} && mkdir output && cd output && openssl rand 16 > enc.key && echo enc.key > enc.keyinfo && echo enc.key >> enc.keyinfo && cd.. && ffmpeg.exe -vcodec h264_qsv  -i {filePath} -hls_time 100 -hls_key_info_file enc.keyinfo  -hls_playlist_type vod -hls_segment_filename {output} {m3uout} && exit";
+                            startInfo.Arguments = $@"/k cd {path} && mkdir output && cd output && openssl rand 16 > enc.key && echo enc.key > enc.keyinfo && echo enc.key >> enc.keyinfo && cd .. && ffmpeg.exe -vcodec h264_qsv  -i {filePath} -hls_time 100 -hls_key_info_file enc.keyinfo  -hls_playlist_type vod -hls_segment_filename {output} {m3uout} && exit";
                         } else if (checkNvidia.Checked)
                         {
-                            startInfo.Arguments = $@"/k cd {path} && mkdir output && cd output && openssl rand 16 > enc.key && echo enc.key > enc.keyinfo && echo enc.key >> enc.keyinfo && cd.. && ffmpeg.exe -hwaccel cuda  -i {filePath} -hls_time 100 -hls_key_info_file enc.keyinfo  -hls_playlist_type vod -hls_segment_filename {output} {m3uout} && exit";
+                            startInfo.Arguments = $@"/k cd {path} && mkdir output && cd output && openssl rand 16 > enc.key && echo enc.key > enc.keyinfo && echo enc.key >> enc.keyinfo && cd .. && ffmpeg.exe -hwaccel cuda  -i {filePath} -hls_time 100 -hls_key_info_file enc.keyinfo  -hls_playlist_type vod -hls_segment_filename {output} {m3uout} && exit";
                         } else
                         {
-                            startInfo.Arguments = $@"/k cd {path} && mkdir output && cd output && openssl rand 16 > enc.key && echo enc.key > enc.keyinfo && echo enc.key >> enc.keyinfo && cd.. && ffmpeg.exe -i {filePath} -hls_time 100 -hls_key_info_file enc.keyinfo  -hls_playlist_type vod -hls_segment_filename {output} {m3uout} && exit";
+                            startInfo.Arguments = $@"/k cd {path} && mkdir output && cd output && openssl rand 16 > enc.key && echo enc.key > enc.keyinfo && echo enc.key >> enc.keyinfo && cd .. && ffmpeg.exe -i {filePath} -hls_time 100 -hls_key_info_file enc.keyinfo  -hls_playlist_type vod -hls_segment_filename {output} {m3uout} && exit";
                         }
                       
 
